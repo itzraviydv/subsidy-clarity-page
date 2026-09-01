@@ -1,12 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Video, Check, ArrowRight, Search, LineChart, Compass, Quote, Youtube } from "lucide-react";
 import logoAsset from "@/assets/apni-subsidy-logo.asset.json";
-import sonamPhotoAsset from "@/assets/ca-sonam-khandelwal.jpg.asset.json";
+import bannerAsset from "@/assets/apni-subsidy-banner.png.asset.json";
+
+
 
 /*
  * EDITABLE CONTENT — update text, prices, photos, video and payment/booking links here.
  * - Set each CTA `href` to your payment or booking link when ready.
- * - Replace `team` photos and `video.youtubeUrl` with your own.
+ * - Replace the `poster` image and `video.youtubeUrl` with your own.
  * - Replace testimonial placeholders only with verified customer quotes.
  */
 const content = {
@@ -71,19 +73,11 @@ const content = {
   },
   authority: {
     heading: "Guidance From Experienced Business Professionals",
-    team: [
-      {
-        name: "CA Sonam Khandelwal",
-        role: "Founder — Apni Subsidy",
-        photo: sonamPhotoAsset.url, // replace with your own photo URL
-      },
-      {
-        name: "Aanand Saxena",
-        role: "COO — Apni Subsidy",
-        photo: "", // add photo URL here
-      },
-    ],
+    poster: bannerAsset.url, // replace with your own poster image URL
+    posterAlt: "Apni Subsidy Business Consultation — CA Sonam Khandelwal",
   },
+
+
   video: {
     heading: "Learn From Our Business Insights",
     youtubeUrl: "", // PASTE YOUTUBE VIDEO LINK HERE (e.g. https://www.youtube.com/watch?v=VIDEO_ID)
@@ -285,30 +279,16 @@ function Index() {
             {content.authority.heading}
           </h2>
           <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gold" />
-          <div className="mx-auto mt-14 grid max-w-3xl gap-8 sm:grid-cols-2">
-            {content.authority.team.map((member) => (
-              <div
-                key={member.name}
-                className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
-              >
-                {member.photo ? (
-                  <img src={member.photo} alt={member.name} className="aspect-[4/5] w-full object-cover object-top" />
-                ) : (
-                  <div className="flex aspect-[4/5] w-full items-center justify-center bg-secondary">
-                    <span className="font-display text-5xl font-semibold text-primary/40">
-                      {member.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
-                    </span>
-                  </div>
-                )}
-                <div className="p-6 text-center">
-                  <h3 className="font-display text-xl font-semibold">{member.name}</h3>
-                  <p className="mt-1 text-sm font-medium text-gold">{member.role}</p>
-                </div>
-              </div>
-            ))}
+          <div className="mx-auto mt-14 max-w-4xl">
+            <img
+              src={content.authority.poster}
+              alt={content.authority.posterAlt}
+              className="w-full rounded-2xl border border-border shadow-md"
+            />
           </div>
         </div>
       </section>
+
 
       {/* VIDEO */}
       <section className="border-t border-border bg-secondary/40">
