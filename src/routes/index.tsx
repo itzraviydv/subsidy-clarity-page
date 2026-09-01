@@ -275,35 +275,6 @@ function Index() {
         </div>
       </section>
 
-
-      {/* VIDEO */}
-      <section className="border-t border-border bg-secondary/40">
-        <div className="mx-auto max-w-4xl px-6 py-20 md:py-28">
-          <h2 className="text-center font-display text-3xl font-semibold tracking-tight md:text-4xl">
-            {content.video.heading}
-          </h2>
-          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gold" />
-          <div className="mt-14 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-            {embedUrl ? (
-              <iframe
-                src={embedUrl}
-                title="Apni Subsidy business insights video"
-                className="aspect-video w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            ) : (
-              <div className="flex aspect-video w-full flex-col items-center justify-center gap-4 bg-secondary/60">
-                <Youtube className="h-12 w-12 text-primary/50" />
-                <p className="text-sm font-medium tracking-wide text-muted-foreground">
-                  [PASTE YOUTUBE VIDEO LINK HERE]
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* TESTIMONIALS */}
       <section className="border-t border-border">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
