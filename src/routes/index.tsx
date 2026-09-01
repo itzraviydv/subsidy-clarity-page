@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Video, Check, ArrowRight, Search, LineChart, Compass, Quote, Youtube } from "lucide-react";
+import { Phone, Video, Check, ArrowRight, Search, LineChart, Compass, Quote } from "lucide-react";
 import logoAsset from "@/assets/apni-subsidy-logo.asset.json";
 import bannerAsset from "@/assets/apni-subsidy-banner.png.asset.json";
 
 
 
 /*
- * EDITABLE CONTENT — update text, prices, photos, video and payment/booking links here.
+ * EDITABLE CONTENT — update text, prices, photos and payment/booking links here.
  * - Set each CTA `href` to your payment or booking link when ready.
- * - Replace the `poster` image and `video.youtubeUrl` with your own.
+ * - Replace the `poster` image with your own.
  * - Replace testimonial placeholders only with verified customer quotes.
  */
 const content = {
@@ -76,12 +76,6 @@ const content = {
     poster: bannerAsset.url, // replace with your own poster image URL
     posterAlt: "Apni Subsidy Business Consultation — CA Sonam Khandelwal",
   },
-
-
-  video: {
-    heading: "Learn From Our Business Insights",
-    youtubeUrl: "", // PASTE YOUTUBE VIDEO LINK HERE (e.g. https://www.youtube.com/watch?v=VIDEO_ID)
-  },
   testimonials: {
     heading: "What Business Owners Say",
     items: [
@@ -103,12 +97,6 @@ const content = {
   },
   copyright: "© Apni Subsidy. All Rights Reserved.",
 };
-
-function youtubeEmbedUrl(url: string): string | null {
-  if (!url) return null;
-  const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{6,})/);
-  return match ? `https://www.youtube.com/embed/${match[1]}` : null;
-}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -141,8 +129,6 @@ function Logo({ className }: { className?: string }) {
 const pillarIcons = { understand: Search, analyse: LineChart, recommend: Compass } as const;
 
 function Index() {
-  const embedUrl = youtubeEmbedUrl(content.video.youtubeUrl);
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* HEADER */}
@@ -285,35 +271,6 @@ function Index() {
               alt={content.authority.posterAlt}
               className="w-full rounded-2xl border border-border shadow-md"
             />
-          </div>
-        </div>
-      </section>
-
-
-      {/* VIDEO */}
-      <section className="border-t border-border bg-secondary/40">
-        <div className="mx-auto max-w-4xl px-6 py-20 md:py-28">
-          <h2 className="text-center font-display text-3xl font-semibold tracking-tight md:text-4xl">
-            {content.video.heading}
-          </h2>
-          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gold" />
-          <div className="mt-14 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-            {embedUrl ? (
-              <iframe
-                src={embedUrl}
-                title="Apni Subsidy business insights video"
-                className="aspect-video w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            ) : (
-              <div className="flex aspect-video w-full flex-col items-center justify-center gap-4 bg-secondary/60">
-                <Youtube className="h-12 w-12 text-primary/50" />
-                <p className="text-sm font-medium tracking-wide text-muted-foreground">
-                  [PASTE YOUTUBE VIDEO LINK HERE]
-                </p>
-              </div>
-            )}
           </div>
         </div>
       </section>
