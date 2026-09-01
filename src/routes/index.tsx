@@ -98,12 +98,6 @@ const content = {
   copyright: "© Apni Subsidy. All Rights Reserved.",
 };
 
-function youtubeEmbedUrl(url: string): string | null {
-  if (!url) return null;
-  const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{6,})/);
-  return match ? `https://www.youtube.com/embed/${match[1]}` : null;
-}
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
