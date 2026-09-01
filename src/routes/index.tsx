@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Video, Check, ArrowRight, Search, LineChart, Compass, Quote, Youtube } from "lucide-react";
+import { Phone, Video, Check, ArrowRight, Search, LineChart, Compass, Quote } from "lucide-react";
 import logoAsset from "@/assets/apni-subsidy-logo.asset.json";
 import bannerAsset from "@/assets/apni-subsidy-banner.png.asset.json";
 
