@@ -76,12 +76,6 @@ const content = {
     poster: bannerAsset.url, // replace with your own poster image URL
     posterAlt: "Apni Subsidy Business Consultation — CA Sonam Khandelwal",
   },
-
-
-  video: {
-    heading: "Learn From Our Business Insights",
-    youtubeUrl: "", // PASTE YOUTUBE VIDEO LINK HERE (e.g. https://www.youtube.com/watch?v=VIDEO_ID)
-  },
   testimonials: {
     heading: "What Business Owners Say",
     items: [
