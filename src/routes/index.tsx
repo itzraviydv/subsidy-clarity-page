@@ -129,8 +129,6 @@ function Logo({ className }: { className?: string }) {
 const pillarIcons = { understand: Search, analyse: LineChart, recommend: Compass } as const;
 
 function Index() {
-  const embedUrl = youtubeEmbedUrl(content.video.youtubeUrl);
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* HEADER */}
