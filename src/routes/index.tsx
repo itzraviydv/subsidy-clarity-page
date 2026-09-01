@@ -6,9 +6,9 @@ import bannerAsset from "@/assets/apni-subsidy-banner.png.asset.json";
 
 
 /*
- * EDITABLE CONTENT — update text, prices, photos, video and payment/booking links here.
+ * EDITABLE CONTENT — update text, prices, photos and payment/booking links here.
  * - Set each CTA `href` to your payment or booking link when ready.
- * - Replace the `poster` image and `video.youtubeUrl` with your own.
+ * - Replace the `poster` image with your own.
  * - Replace testimonial placeholders only with verified customer quotes.
  */
 const content = {
